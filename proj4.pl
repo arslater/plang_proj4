@@ -9,7 +9,7 @@ title(happy).
 title(magnet).
 
 ttime(fifteen).
-ttime(thiry-one).
+ttime(thirty-one).
 ttime(thirty-eight).
 ttime(fifty-five).
 
@@ -57,12 +57,16 @@ solve :-
 	  member([_,dancing,_,four],Quads));
 	 (member([carl,_,_,seven],Quads),
 	  member([_,dancing,_,five],Quads)) ),
-
+	not(member([carl,dancing,_,_],Quads)),
+	
 	%Rule 6:
 	member([bill,_,_,four],Quads),
 	
 	%Rule 7:
-	not(member([inez,happy,thirty-eight,_],Quads)),
+	not(member([inez,happy,thirty-one,_],Quads)),
+	not(member([_,happy,thirty-one,_],Quads)),
+	not(member([inez,happy,_,_],Quads)),
+	not(member([inez,_,thirty-one,_],Quads)),
 
 	%Rule 8:
 	((member([carl,magnet,_,_],Quads),
